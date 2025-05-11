@@ -1,0 +1,12 @@
+from django.contrib import admin
+from .models import Actor
+
+@admin.register(Actor)
+class ActorAdmin(admin.ModelAdmin):
+    """
+    Admin interface for the Actor model.
+    """
+    list_display = ('id', 'name', 'birthday', 'nacionality')
+    search_fields = ('name',)
+    list_filter = ('nacionality',)
+    ordering = ('name',)

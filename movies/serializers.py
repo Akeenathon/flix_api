@@ -9,7 +9,7 @@ class MovieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('id', 'title', 'release_data', 'resume', 'actors', 'genres')
+        fields = '__all__'
 
     def validate_date_release(self, value):
         if value.year < 1970:
@@ -29,10 +29,10 @@ class MovieGetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ['id', 'title', 'genre', 'actors', 'release_date', 'rate', 'resume']
+        fields = ['id', 'title', 'genres', 'actors', 'release_date', 'rate', 'resume']
 
     def get_rate(self, obj):
-        rate = obj.ratings.aggregate(Avg('stars'))['rating__avg']
+        rate = obj.reviews.aggregate(Avg('stars'))['stars__avg']
 
         if rate:
             return round(rate, 1)

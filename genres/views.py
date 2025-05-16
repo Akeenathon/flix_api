@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from models import Genre
-from serializers import GenreSerializer
+from .models import Genre
+from .serializers import GenreSerializer
 
 
 class GenreListCreateView(generics.ListCreateAPIView):

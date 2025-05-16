@@ -12,6 +12,7 @@ class Review(models.Model):
         ]
     )
     comment = models.TextField(max_length=200, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.movie
+        return str(self.movie)

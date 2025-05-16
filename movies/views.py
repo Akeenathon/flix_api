@@ -2,6 +2,7 @@ from django.db.models import Count, Avg
 from rest_framework import generics, views, response, status
 from rest_framework.permissions import IsAuthenticated
 from . models import Movie
+from reviews.models import Review
 from . serializers import MovieSerializer, MovieGetSerializer
 
 

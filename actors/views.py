@@ -6,7 +6,7 @@ from .serializers import ActorSeralizer
 
 class ActorListCreateView(generics.ListCreateAPIView):
     """
-    API view to list and create actors.
+    API view para listar e criar atores.
     """
     queryset = Actor.objects.all()
     serializer_class = ActorSeralizer
@@ -22,7 +22,7 @@ class ActorListCreateView(generics.ListCreateAPIView):
 
 class ActorRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     """
-    API view to retrieve, update or delete an actor.
+    API view para detalhar, atualizar ou deletar atores.
     """
     queryset = Actor.objects.all()
     serializer_class = ActorSeralizer

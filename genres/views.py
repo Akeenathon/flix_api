@@ -6,7 +6,7 @@ from serializers import GenreSerializer
 
 class GenreListCreateView(generics.ListCreateAPIView):
     """
-    API view to list and create genres.
+    API view para listar e criar novos gêneros.
     """
     permission_classes = [IsAuthenticated]
     queryset = Genre.objects.all()
@@ -15,7 +15,7 @@ class GenreListCreateView(generics.ListCreateAPIView):
 
 class GenreRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     """
-    API view to retrieve, update or delete a genre.
+    API view para detalhar, atualizar ou deletar um gênero.
     """
     permission_classes = [IsAuthenticated]
     queryset = Genre.objects.all()

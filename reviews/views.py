@@ -1,5 +1,6 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
+from app.permissions import GlobalDefaulPermission
 from .models import Review
 from .serializers import ReviewSeralizer
 
@@ -10,7 +11,7 @@ class ReviewListCreateView(generics.ListCreateAPIView):
     """
     queryset = Review.objects.all()
     serializer_class = ReviewSeralizer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, GlobalDefaulPermission]
 
 
 class ReviewRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
@@ -19,4 +20,4 @@ class ReviewRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = Review.objects.all()
     serializer_class = ReviewSeralizer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, GlobalDefaulPermission]

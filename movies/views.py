@@ -1,6 +1,6 @@
 from django.db.models import Count, Avg
 from rest_framework import generics, views, response, status
-from rest_framework.permissions import IsAuthenticated, GlobalDefaulPermission
+from rest_framework.permissions import IsAuthenticated
 from app.permissions import GlobalDefaulPermission
 from .models import Movie
 from .serializers import MovieSerializer, MovieGetSerializer

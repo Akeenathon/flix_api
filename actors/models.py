@@ -89,7 +89,7 @@ NATIONALITY_CHOICES = (
 class Actor(models.Model):
     name = models.CharField(max_length=60)
     birthday = models.DateField(null=True, blank=True)
-    nacionality = models.CharField(
+    nationality = models.CharField(
         max_length=60,
         choices=NATIONALITY_CHOICES,
         blank=True,
